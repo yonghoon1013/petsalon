@@ -5,7 +5,7 @@ export const myContext = createContext();
 
 function Context({children}) {
 
-  function test = () => {
+  const test = () => {
     console.log("hehe")
   }
  
