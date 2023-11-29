@@ -5,6 +5,10 @@ export const myContext = createContext();
 
 function Context({children}) {
 
+  function test = () => {
+    console.log("hehe")
+  }
+ 
   return (
     <myContext.Provider>
         {children}
