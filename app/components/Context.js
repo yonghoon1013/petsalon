@@ -9,6 +9,10 @@ function Context({children}) {
     console.log("hehe")
   }
  
+  const fefe = () => {
+    console.log("sdfsd")
+  }
+
   return (
     <myContext.Provider>
         {children}
