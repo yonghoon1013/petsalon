@@ -17,6 +17,60 @@ function Context({children}) {
     console.log('ss');
   }
 
+  const aa = () => {
+    console.log('ss');
+  }
+
+
+  const aa = () => {
+    console.log('ss');
+  }
+
+
+  const aa = () => {
+    console.log('ss');
+  }
+
+
+  const aa = () => {
+    console.log('ss');
+  }
+
+
+  const aa = () => {
+    console.log('ss');
+  }
+
+  const aa = () => {
+    console.log('ss');
+  }
+
+  const aa = () => {
+    console.log('ss');
+  }
+
+  const aa = () => {
+    console.log('ss');
+  }
+
+  const aa = () => {
+    console.log('ss');
+  }
+
+  const aa = () => {
+    console.log('ss');
+  }
+
+  const aa = () => {
+    console.log('ss');
+  }
+
+  const aa = () => {
+    console.log('ss');
+  }
+
+  
+
   return (
     <myContext.Provider>
         {children}
