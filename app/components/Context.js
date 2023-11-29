@@ -13,6 +13,10 @@ function Context({children}) {
     console.log("sdfsd")
   }
 
+  const aa = () => {
+    console.log('ss');
+  }
+
   return (
     <myContext.Provider>
         {children}
