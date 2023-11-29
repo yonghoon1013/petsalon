@@ -5,13 +5,6 @@ export const myContext = createContext();
 
 function Context({children}) {
 
-  const test = () => {
-    console.log("hehe")
-  }
- 
-  const fefe = () => {
-    console.log("sdfsd")
-  }
 
 
   return (
