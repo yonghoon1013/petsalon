@@ -13,7 +13,7 @@ export async function POST(req, res) {
     const qData = await req.json();
     const collection = await dbConnect("member");
     console.log(qData);
-    await collection.insertOne({id: qData.id, password: qData.password, desc:qData.desc});
+    await collection.insertOne({id: qData.id, password: qData.pw, nickname:qData.nick, key: qData.key});
     const dataGet = await collection.find().toArray();
 
     return Response.json(dataGet);

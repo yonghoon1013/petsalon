@@ -4,73 +4,13 @@ import React, { createContext } from 'react'
 export const myContext = createContext();
 
 function Context({children}) {
-
-  const test = () => {
-    console.log("hehe")
-  }
+<<<<<<< Updated upstream
  
-  const fefe = () => {
-    console.log("sdfsd")
-  }
-
-  const aa = () => {
-    console.log('ss');
-  }
-
-  const aa = () => {
-    console.log('ss');
-  }
+=======
 
 
-  const aa = () => {
-    console.log('ss');
-  }
 
-
-  const aa = () => {
-    console.log('ss');
-  }
-
-
-  const aa = () => {
-    console.log('ss');
-  }
-
-
-  const aa = () => {
-    console.log('ss');
-  }
-
-  const aa = () => {
-    console.log('ss');
-  }
-
-  const aa = () => {
-    console.log('ss');
-  }
-
-  const aa = () => {
-    console.log('ss');
-  }
-
-  const aa = () => {
-    console.log('ss');
-  }
-
-  const aa = () => {
-    console.log('ss');
-  }
-
-  const aa = () => {
-    console.log('ss');
-  }
-
-  const aa = () => {
-    console.log('ss');
-  }
-
-  
-
+>>>>>>> Stashed changes
   return (
     <myContext.Provider>
         {children}
