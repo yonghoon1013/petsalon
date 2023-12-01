@@ -1,28 +1,37 @@
-import Link from 'next/link'
+"use client"
+import axios from 'axios'
 import React from 'react'
 
-export default function Login() {
+function Login() {
+    const loginFn = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const objData = Object.fromEntries(formData);
+
+        console.log(Date.now())
+
+        axios.get(`/api/login?id=${objData.id}&pw=${objData.pw}`)
+        .then(res=>{
+            console.log(res.data)
+            if(res.data.length > 0) {
+                sessionStorage.setItem("id", res.data[0].id);
+                sessionStorage.setItem("nick", res.data[0].nickname);
+            } else {
+                alert("응 실패");
+            }
+        })
+    }
+
   return (
-        <div className='contentsWrapper'>
-            <form>
-                <input type='text' className='idInput'/>
-                <div className='pwInputWrapper' placeholder='아이디'>
-                    <input type='password' className='pwInput' placeholder='비밀번호'/>
-                    <button type='button' className='pwVisualBtn'/>
-                </div>
-                <button className='loginBtn'>
-                    로그인
-                </button>
-            </form>
-            <nav>
-                <ul className='searchWrapper'>
-                    <li className='searchIdBtn'>아이디 찾기</li>
-                    <li className='searchPwBtn'>비밀번호 찾기</li>
-                </ul>    
-                <Link>
-                    회원가입 하기
-                </Link>
-            </nav>
-        </div>
+    
+    <section>
+        <form onSubmit={loginFn}>
+            <input name='id' type='text'/>
+            <input name='pw' type='text'/>
+            <button>로그인</button>
+        </form>
+    </section>
   )
 }
+
+export default Login

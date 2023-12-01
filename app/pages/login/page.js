@@ -1,14 +1,10 @@
-import Login from "@/app/components/login/Login";
-import '../../components/login/styles.scss';
+import Login from '@/app/components/login/Login'
+import React from 'react'
 
-export default function page() {
+function page() {
   return (
-    <section className='loginWrapper'>
-        <h1>
-            <img src='' alt='댕냥살롱'/>
-        </h1>
-
-        <Login />
-    </section>
+    <Login/>
   )
 }
+
+export default page

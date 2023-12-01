@@ -12,16 +12,22 @@ export default function Signup() {
     const signUpFun = async (e) => {
         e.preventDefault();
 
-        // let formData = new FormData(e.target);
-        // formData.append("key", Date.now());
-        // let objData = Object.fromEntries(formData);
+        let formData = new FormData(e.target);
+        formData.append("key", Date.now());
+        let objData = Object.fromEntries(formData);
+
+        console.log(objData)
+
+        if(objData.pw != objData.pwCheck) {alert("비번틀려")}
+        else {
+            await axios.post('/api/member', objData)
+            .then(res=>{
+                console.log(res.data)
+            })    
+        }
         
-        
-        // const data = await axios.get('/api/login')
-        // .then(res=>{
-            //     console.log(res.data)
-            // })
-    }//signUpFun(e) 함수정의
+
+        }//signUpFun(e) 함수정의
         
     const idchecking = async (e) => {
         e.preventDefault();
