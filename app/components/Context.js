@@ -6,7 +6,7 @@ export const myContext = createContext();
 
 function Context({children}) {
   const [member, setMember] = useState();
-  
+
   
 
   const memberLd = () => {
@@ -18,6 +18,7 @@ function Context({children}) {
 
   useEffect(()=>{
     memberLd()
+    console.log("hehe")
   }, [])
 
   return (
