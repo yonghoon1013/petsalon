@@ -4,7 +4,13 @@ import React, { createContext } from 'react'
 export const myContext = createContext();
 
 function Context({children}) {
+<<<<<<< Updated upstream
  
+=======
+
+
+
+>>>>>>> Stashed changes
   return (
     <myContext.Provider>
         {children}
