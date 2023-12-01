@@ -6,7 +6,7 @@ export const myContext = createContext();
 
 function Context({children}) {
   const [member, setMember] = useState();
-
+  
   
 
   const memberLd = () => {
