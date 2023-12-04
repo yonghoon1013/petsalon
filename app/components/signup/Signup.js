@@ -39,7 +39,7 @@ export default function Signup() {
         }//signUpFun(e) 함수정의
         
         return (
-        <>
+        <section>
             <div className='titleWrapper'>
                 <button type='button' className='prevBtn'>←</button>
                 <h2>회원 가입</h2>
@@ -73,6 +73,6 @@ export default function Signup() {
                     다음으로
                 </button>
             </form>    
-        </>
+        </section>
   )
 }

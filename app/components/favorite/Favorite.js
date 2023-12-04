@@ -1,10 +1,11 @@
 "use client"
 
 import React from 'react'
+import styles from './style.module.scss'
 
 function Favorite() {
   return (
-    <>
+    <section>
         <div className='titleWrapper'>
             <h2 className='title'>내 관심 미용</h2>
              <button className='serch'><img src='./serch.png'></img></button>
@@ -17,7 +18,7 @@ function Favorite() {
         </div>
 
         
-    </>
+    </section>
   )
 }
 
