@@ -6,8 +6,21 @@ export const myContext = createContext();
 
 function Context({children}) {
   // const [member, setMember] = useState();
+  const [profView, setProfView] = useState();
+  const sKey = sessionStorage.getItem("key");
 
-  
+  const profLd = async () => {
+    await axios.get(`/api/profPic?key=${sKey}`)
+    .then(res=>{
+        setProfView(res.data[0].imgUrl);
+    });
+  }
+
+  useEffect(()=>{
+    profLd();
+  }, [])
+
+
 
   // const memberLd = () => {
   //   axios.get(`/api/member`) 
@@ -22,7 +35,7 @@ function Context({children}) {
   // }, [])
 
   return (
-    <myContext.Provider>
+    <myContext.Provider value={{profView}}>
         {children}
     </myContext.Provider>
   )

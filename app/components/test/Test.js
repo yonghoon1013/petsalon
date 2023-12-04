@@ -4,6 +4,9 @@ import React, { useEffect, useState } from 'react'
 
 function Test() {
     const [data, setData] = useState();
+    const [view, setView] = useState();
+
+    const sKey = sessionStorage.getItem("key");
 
     // const testGet = async () => {
     //     await axios.get(`/api/member`)
@@ -36,10 +39,19 @@ function Test() {
         await axios.put(`/api/member`, {id: "hmmm", password:"12345", mId:"yessss"});
     }
 
-
+    const picUpload = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const objData = Object.fromEntries(formData);
+        console.log(objData);
+        const fr = new FileReader();
+        fr.readAsDataURL(objData.upload);
+        fr.onload = (e) => {
+            axios.put(`/api/profPic`, {key: sKey, imgUrl: e.target.result});
+        };
+    }
 
     // if(!data) return <>로딩중</>
-
     return (
     <section>
         <div>
@@ -51,6 +63,17 @@ function Test() {
             </form>
             <button onClick={deleteTest}>지우기테스트</button>
             <button onClick={modifyTest}>수정테스트</button>
+        </div>
+        <div>
+            <form onSubmit={picUpload}>
+                <input name='upload' type='file' onChange={(e)=>{
+                    const file = e.target.files[0];
+                    file && setView(URL.createObjectURL(file))
+                }}/>
+                <button>저장</button>
+            </form>
+            <img src={view}></img>
+            <img src={profView}></img>
         </div>
     </section>
     )

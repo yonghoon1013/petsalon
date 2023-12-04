@@ -1,14 +1,18 @@
-import React from 'react'
+"use client"
+import React, { useContext } from 'react'
 import styles from './mypage.module.scss'
+import { myContext } from '../Context'
 
 function Mypage() {
+  const {profView} = useContext(myContext);
+
   return (
     <section className={styles.mypageSec}>
       <div className={styles.profile}>
         <div className={styles.title}>마이페이지</div>
         <div className={styles.titleBox}>
           <figure className={styles.profPic}>
-            <img/>
+            <img src={profView}/>
           </figure>
           <div className={styles.profName}><strong>김아무개</strong><button className={styles.nameSett}><figure><img src='../asset/mypage/pensil.png'/></figure></button></div>          
           <span className={styles.profEmail}>sdfgsf@naver.com</span>         
