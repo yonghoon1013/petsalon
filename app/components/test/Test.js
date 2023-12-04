@@ -42,7 +42,7 @@ function Test() {
     // if(!data) return <>로딩중</>
 
     return (
-    <div>
+    <section>
         Test
         <form onSubmit={inputTest}>
             <input name='id'/>
@@ -52,7 +52,7 @@ function Test() {
         </form>
         <button onClick={deleteTest}>지우기테스트</button>
         <button onClick={modifyTest}>수정테스트</button>
-        </div>
+        </section>
     )
 }
 

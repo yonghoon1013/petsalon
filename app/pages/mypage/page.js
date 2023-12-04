@@ -1,8 +1,9 @@
+import Mypage from '@/app/components/mypage/Mypage'
 import React from 'react'
 
 function page() {
   return (
-    <div>page</div>
+    <Mypage/>
   )
 }
 

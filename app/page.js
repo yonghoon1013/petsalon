@@ -53,7 +53,7 @@ export default function Home() {
 
 
   return (
-    <main className={styles.main}>
-    </main>
+    <section className={styles.main}>
+    </section>
   )
 }
