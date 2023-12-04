@@ -5,18 +5,17 @@ import React, { useEffect, useState } from 'react'
 function Test() {
     const [data, setData] = useState();
 
-    const testGet = async () => {
-        await axios.get(`/api/member`)
-        .then(res=>{
-            setData(res.data)
-        })
-    }
-    console.log(data)
+    // const testGet = async () => {
+    //     await axios.get(`/api/member`)
+    //     .then(res=>{
+    //         setData(res.data)
+    //     })
+    // }
 
 
-    useEffect(()=>{
-        testGet();
-    }, [])
+    // useEffect(()=>{
+    //     testGet();
+    // }, [])
 
     const inputTest = async (e) => {
         e.preventDefault();
@@ -43,16 +42,17 @@ function Test() {
 
     return (
     <section>
-        Test
-        <form onSubmit={inputTest}>
-            <input name='id'/>
-            <input name='password'/>
-            <input name='desc'/>
-            <button>넣기테스트</button>
-        </form>
-        <button onClick={deleteTest}>지우기테스트</button>
-        <button onClick={modifyTest}>수정테스트</button>
-        </section>
+        <div>
+            <form onSubmit={inputTest}>
+                <input name='id'/>
+                <input name='password'/>
+                <input name='desc'/>
+                <button>넣기테스트</button>
+            </form>
+            <button onClick={deleteTest}>지우기테스트</button>
+            <button onClick={modifyTest}>수정테스트</button>
+        </div>
+    </section>
     )
 }
 

@@ -14,7 +14,7 @@ function Login() {
         .then(res=>{
             console.log(res.data)
             if(res.data.length > 0) {
-                sessionStorage.setItem("id", res.data[0].id);
+                sessionStorage.setItem("key", res.data[0].key);
                 sessionStorage.setItem("nick", res.data[0].nickname);
             } else {
                 alert("응 실패");
