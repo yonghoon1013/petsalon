@@ -17,11 +17,14 @@
 			align-items: center;
 
 			>.profPic {
-				width: 100px;
-				height: 100px;
-				background-color: red;
+				width: 150px;
+				height: 150px;
 				border-radius: 100%;
-				>img {}
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				>img {width: 100%;}
 			}
 
 			>.profName {

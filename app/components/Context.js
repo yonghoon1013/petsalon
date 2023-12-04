@@ -7,32 +7,26 @@ export const myContext = createContext();
 function Context({children}) {
   // const [member, setMember] = useState();
   const [profView, setProfView] = useState();
-  const sKey = sessionStorage.getItem("key");
 
   const profLd = async () => {
+    const sKey = sessionStorage.getItem("key");
     await axios.get(`/api/profPic?key=${sKey}`)
     .then(res=>{
         setProfView(res.data[0].imgUrl);
     });
   }
 
+  const memberLd = () => {
+    axios.get(`/api/member`) 
+    .then(res=>{
+      console.log(res);
+    })
+  }
+
   useEffect(()=>{
-    profLd();
+    // memberLd();
+    // profLd();
   }, [])
-
-
-
-  // const memberLd = () => {
-  //   axios.get(`/api/member`) 
-  //   .then(res=>{
-  //     console.log(res);
-  //   })
-  // }
-
-  // useEffect(()=>{
-  //   memberLd()
-  //   console.log("hehe")
-  // }, [])
 
   return (
     <myContext.Provider value={{profView}}>

@@ -1,24 +1,24 @@
 "use client"
 import axios, { Axios } from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { myContext } from '../Context';
 
 function Test() {
+    const {profView} = useContext(myContext);
     const [data, setData] = useState();
     const [view, setView] = useState();
 
-    const sKey = sessionStorage.getItem("key");
 
-    // const testGet = async () => {
-    //     await axios.get(`/api/member`)
-    //     .then(res=>{
-    //         setData(res.data)
-    //     })
-    // }
+    const testGet = async () => {
+        await axios.get(`/api/member`)
+        .then(res=>{
+            setData(res.data)
+        })
+    }
 
-
-    // useEffect(()=>{
-    //     testGet();
-    // }, [])
+    useEffect(()=>{
+        // testGet();
+    }, [])
 
     const inputTest = async (e) => {
         e.preventDefault();
@@ -41,6 +41,7 @@ function Test() {
 
     const picUpload = async (e) => {
         e.preventDefault();
+        const sKey = sessionStorage.getItem("key");
         const formData = new FormData(e.target);
         const objData = Object.fromEntries(formData);
         console.log(objData);
