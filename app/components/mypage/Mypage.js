@@ -55,8 +55,14 @@ function Mypage() {
           </button>
         </div>
         <div className={styles.infoBox}>
-          <div className={styles.dDesc}><span>안내사항</span></div>
-          <div className={styles.dPrice}><span>가격정보</span></div>
+          <div className={styles.dDesc}>
+            <span>안내사항</span>
+            <span>설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들</span>
+          </div>
+          <div className={styles.dPrice}>
+            <span>가격정보</span>
+            <span>설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들설명들</span>
+          </div>
           <div className={styles.dTime}>
             <span>영업시간</span>
             <span>21:23 ~ 13:42</span>
@@ -67,6 +73,7 @@ function Mypage() {
           </div>
           <div className={styles.dNumber}>
             <span>H.P</span>
+            <span>010-1111-2222</span>
           </div>
         </div> 
       </div>
