@@ -3,25 +3,12 @@ import styles from "./list.module.scss";
 import React, { useState } from 'react';
 
 function List() {
-    const [check, setCheck] = useState(false);
-    const vv = (e) => {
-        setCheck(e.target.checked);
-        console.log(check);
-    }
     return (
         <section>
 
             <div className={styles.topBox}>
                 <div className={styles.location}>
                     <p>역삼동</p>
-                </div>
-
-                <div class={styles.customCheckbox}>
-                    <input id="status" type="checkbox" name="status" onClick={(e) => { vv(e) }} />
-                    <label for="status">
-                        <div class={styles.statusSwitch} data-unchecked="디자이너" data-checked="미용샵">
-                        </div>
-                    </label>
                 </div>
             </div>
 
