@@ -97,7 +97,7 @@ section.signUpTearmsWrapper{
     >div.titleWrapper{
         // outline: 1px solid red;
         position: relative; top: 0; left: 0; z-index: 0;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
         @include flex();
 
         >button.prevBtn{
@@ -115,12 +115,80 @@ section.signUpTearmsWrapper{
             white-space: nowrap;
         }
 
-        >strong.welcomeText{
-            @include font(2.25rem, 700, $mainColor1);
-            letter-spacing: -0.72px;
-        }//strong.welcomeText
-
     }//div.titleWrapper
+
+    >strong.welcomeText{
+        display: inline-block;
+        @include font(2.25rem, 700, $mainColor1);
+        letter-spacing: -0.72px;
+        margin-bottom: 64px;
+
+        white-space: nowrap;
+    }//strong.welcomeText
+
+    >form.signUpTermForm{
+        >div.termWrapper{
+
+            input[type="checkbox"]{
+                display: none;
+            }
+            label{
+                width: 28px; height: 28px;
+                border-radius: 7px;
+                border: 2px solid $grayColor5;
+                cursor: pointer;
+            }
+    
+            >strong.allCheck{
+                @include flex(space-between);
+                @include font(1.875rem, 500, black);
+                line-height: 166%;
+                border-bottom: 2px solid #E3E3E3;
+
+                >input[type="checkbox"]{
+                    
+                }
+                >label.allTerm_label{
+
+                }//label.allTerm_label
+            }//strong.allCheck
+    
+            >ul{
+                padding-top: 20px;
+                margin-bottom: 310px;
+
+                >li{
+                    // outline: 1px solid red;
+                    &:not(:last-child){
+                        margin-bottom: 36px;
+                    }
+                    @include flex(space-between);    
+                    @include font(1.625rem, 400, #2D2D2D);
+                    line-height: 192%; 
+                    letter-spacing: -0.78px;
+
+                    >input[type="checkbox"]{
+    
+                    }
+                    >label{
+                        
+                    }//label                            
+                }
+            }//ul
+        }//div.termWrapper
+
+        >button.submitBtn{
+            width: 100%;
+            border-radius: 35px;
+            background: $mainColor1;
+            padding: 25px;
+
+            @include flex();
+            @include font(1.875rem, 500, #FFF);
+            white-space: nowrap;
+        }//button.submitBtn
+
+    }//form.signUpTermForm
 
 
 }//section.signUpTearmsWrapper
