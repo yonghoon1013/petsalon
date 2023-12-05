@@ -8,20 +8,19 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import { Pagination, Navigation } from 'swiper/modules';
-import { useRouter } from "next/navigation";
 
 function Detail() {
-    const [on, setOn] = useState(false);
-    const router = useRouter();
 
-    const accordionToggle = () => {
+    const [on,setOn] = useState(false);
+
+    const accordion = () => {
         setOn(!on);
     }
 
     return (
         <section>
             <div className={styles.top}>
-                <button onClick={() => router.back()}>뒤로</button>
+                <button>뒤로</button>
                 <p>상세보기</p>
             </div>
 
@@ -41,7 +40,7 @@ function Detail() {
                                 <div>
                                     <div className={styles.img}>사진</div>
                                     <p className={styles.name}>좋아요</p>
-                                </div>
+                                    </div>
                             </li>
                             <li>
                                 <div>
@@ -109,9 +108,9 @@ function Detail() {
             <div className={styles.guideBox}>
                 <p className={styles.title}>미용안내</p>
                 <ul>
-                    <li onClick={accordionToggle}>
-                        <p>안내사항</p>
-                        <div className={on ? styles.on : ""}>
+                    <li>
+                        <p onClick={accordion}>안내사항</p>
+                        <div className={on?styles.on:""}>
                             [서비스이용전 주의사항]
                             ※ 방문서비스 가능여부, 미용실 방문, 고객직접방문 여부
 
@@ -137,58 +136,6 @@ function Detail() {
                         <p>안내사항</p>
                         <div>@@@@@@@@@@sadaslkhdkjas hdkjash dkjsah dkjhaskjd hajksdhkj ashjk@@@@@@@@@@@@@@@@@@@@@@@@@@</div>
                     </li>
-                </ul>
-            </div>
-
-            <div className={styles.commentBox}>
-                <p className={styles.title}>문의하기 35개</p>
-                <ul>
-                    <li>
-                        <div className={styles.left}>
-                            <div></div>
-                        </div>
-                        <div className={styles.right}>
-                            <div className={styles.authorBox}>
-                                <div className={styles.left}>
-                                    <p className={styles.nickName}>닉네임</p>
-                                    <span className={styles.time}>2023.11.12 12:00</span>
-                                </div>
-                                <div className={styles.right}>
-                                    <p className={styles.update}>수정학디</p>
-                                    <p className={styles.delete}>삭제하기</p>
-                                </div>
-                            </div>
-                            <div className={styles.comment}>
-                                <p>
-                                    저희 애기 애기때부터 미용하던 곳입니다~ ^^ 사장님 너무 친절하시고 좋아요! 앞으로도 믿고 저희 애기 맡길게요~!!
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div className={styles.left}>
-                            <div></div>
-                        </div>
-                        <div className={styles.right}>
-                            <div className={styles.authorBox}>
-                                <div className={styles.left}>
-                                    <p className={styles.nickName}>닉네임</p>
-                                    <span className={styles.time}>2023.11.12 12:00</span>
-                                </div>
-                                <div className={styles.right}>
-                                    <p className={styles.update}>수정학디</p>
-                                    <p className={styles.delete}>삭제하기</p>
-                                </div>
-                            </div>
-                            <div className={styles.comment}>
-                                <p>
-                                    저희 애기 애기때부터 미용하던 곳입니다~ ^^ 사장님 너무 친절하시고 좋아요! 앞으로도 믿고 저희 애기 맡길게요~!!
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    
                 </ul>
             </div>
 
