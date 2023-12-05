@@ -3,6 +3,10 @@ import Footer from "@/app/Footer";
 import styles from "./style.scss";
 import React, { useEffect, useState } from "react";
 
+import styles from "./style.scss";
+import React from 'react'
+
+
 function Favorite() {
     const StarIcon = () => (
         <svg
