@@ -50,7 +50,7 @@ export default function Signupterm() {
         </div>
 
         <button className='submitBtn'>
-            다음으로
+            다음으로  
         </button>
     </form>    
 </>
