@@ -6,23 +6,14 @@ export default function Signup() {
     const [idChecked, setIdChecked] = useState(false);
     const elIdInput = useRef();
 
-    const idchecking = async (e) => {
-        e.preventDefault();
 
-        // await axios.get(`/api/idcheck?id=${e.target.value}`)
-        // .then(res=>{
-        //     setIdChecked(res.data);
-        //     console.log(res.data);
-        // });
-        // console.log(idChecked)
-    }//idchecking() 함수정의
 
 
     const signUpFun = async (e) => {
         e.preventDefault();
 
         let formData = new FormData(e.target);
-        formData.append("key", Date.now());
+        formData.append("key", Date.now());   
         let objData = Object.fromEntries(formData);
 
         console.log(objData)
@@ -38,17 +29,35 @@ export default function Signup() {
 
         }//signUpFun(e) 함수정의
         
+    const idchecking = async (e) => {
+        e.preventDefault();
+
+        alert('아직 빈 내용');
+
+        // await axios.get(`/api/idcheck?id=${e.target.value}`)
+        // .then(res=>{
+        //     setIdChecked(res.data);
+        //     console.log(res.data);
+        // });
+        // console.log(idChecked)
+    }//idchecking() 함수정의
+
         return (
         <section>
             <div className='titleWrapper'>
-                <button type='button' className='prevBtn'>←</button>
+                <button type='button' className='prevBtn' />
                 <h2>회원 가입</h2>
             </div>
             
             <form className='signUpForm' onSubmit={signUpFun}>
-                <div className='inputWrapper'>
+                <div className='idWrapper inputWrapper'>
                     <label className='inputLabel' htmlFor='id'>아이디</label>
-                    <input ref={elIdInput} type='text' name='id' className='input' id='id' placeholder='아이디'/>
+                    <div className='idInputWrapper'>
+                        <input ref={elIdInput} type='text' name='id' className='idInput' id='id' placeholder='아이디'/>
+                        <button type='button' className='idCheckBtn' onClick={idchecking}>
+                            중복확인
+                        </button>
+                    </div>
                     <span className={idChecked ? "idInfo active" : "idInfo"}>중복됩니다.</span>
                 </div>
 
