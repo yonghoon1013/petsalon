@@ -4,31 +4,24 @@ import Link from 'next/link';
 
 export default function Intro() {
   return (
-    <section className='introWrapper'>
-        <div className='headWrapper'>
-            <h1>
-                <img src='' alt='댕냥살롱'/>
-            </h1>
-            <span>
-                세상에서 가장 가까운 반려동물 미용실
-            </span>
-            <strong>
-                지금 시작해보세요!
-            </strong>
-        </div>
+    <>
         <ul className='imgSlideAni'>
-            <li></li>
-            <li></li>
+            <li>
+                <img src='/LeeTest/img/slide_ani.svg' alt='강아지와 고양이 이미지'/>
+            </li>
+            <li>
+                <img src='/LeeTest/img/slide_ani.svg' alt='강아지와 고양이 이미지'/>
+            </li>
         </ul>
         <div className='btnWrapper'>
-            <button type='button' className='kakaoLoginBtn'>
-                카카오로 시작하기
+            <button type='button' className='kakaoSingUpBtn'>
+                카카오로 회원가입
             </button>
-            <button type='button' className='nomalLoginBtn'>
-                이메일로 시작하기
+            <button type='button' className='nomalSingUpBtn'>
+                이메일로 회원가입
             </button>
-            <Link>이미 계정이 있어요</Link>
+            <Link href=''>이미 계정이 있어요</Link>
         </div>
-    </section>
+    </>
   )
 }

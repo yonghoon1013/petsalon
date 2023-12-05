@@ -13,7 +13,7 @@ export default function Signup() {
         e.preventDefault();
 
         let formData = new FormData(e.target);
-        formData.append("key", Date.now());
+        formData.append("key", Date.now());   
         let objData = Object.fromEntries(formData);
 
         console.log(objData)
@@ -45,7 +45,7 @@ export default function Signup() {
         return (
         <>
             <div className='titleWrapper'>
-                <button type='button' className='prevBtn'>←</button>
+                <button type='button' className='prevBtn' />
                 <h2>회원 가입</h2>
             </div>
             
