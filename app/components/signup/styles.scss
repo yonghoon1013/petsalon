@@ -56,34 +56,7 @@ $grayColor5: #C2C2C2;
 $MarPad: 32px;
 
 // ===== ===== ===== ===== ===== ===== ===== ===== ===== =====  ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
-body{
-// background-color: red;
-}
-
-*{
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px; 
-}
-html{
-    font-size: 16px;
-}
-ul li{
-    list-style-type: none;
-}
-img{
-    vertical-align: middle;
-}
-button{
-    border: none;
-    cursor: pointer;
-}
-// ===== ===== ===== ===== ===== ===== ===== ===== ===== =====  ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
-
-
-
 section.signUpWrapper{
-    // outline: 1px solid red;
     margin: auto;
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2);
     font-family: 'SUITE-Regular';
@@ -92,7 +65,6 @@ section.signUpWrapper{
     width: 100%; max-width: 640px; min-height: 100vh;
     padding: 100px $MarPad 150px;
     background-color: $mainColor3;
-    overflow: hidden;
 
     >div.titleWrapper{
         // outline: 1px solid red;
@@ -101,8 +73,7 @@ section.signUpWrapper{
         @include flex();
 
         >button.prevBtn{
-            width: 11px; height: 21px;
-            background: url('/LeeTest/img/prev_arrow_icon.svg') left top / 100% 100% no-repeat scroll;
+            // outline: 1px solid red;
             position: absolute; top: 50%; left: 0; z-index: 0;
             transform: translateY(-50%);
         }
@@ -119,11 +90,8 @@ section.signUpWrapper{
 
 
     >form.signUpForm{
-        // outline: 1px solid red;
-        width: 100%;
         >div.inputWrapper{
             // outline: 1px solid red;
-            width: 100%;
             &:not(:last-child){
                 margin-bottom: 52px;
             }
@@ -165,36 +133,9 @@ section.signUpWrapper{
             >label.idLabel{
 
             }
-            >div.idInputWrapper{
-                // outline: 1px solid red;
-                @include flex(flex-start);
-                border-radius: 35px;
-                overflow: hidden; 
-                height: 80px;
+            >input.idInput{
 
-                >input.idInput{
-                    width: 100%;
-                    border: none; 
-                    padding: 25px 38px;
-                    @include font(1.625rem, 400, black);
-    
-                    &::placeholder{
-                        color: $grayColor5;
-                    }
-                    &:focus{
-                        outline: none;
-                    }
-
-                }//input.idInput
-                >button.idCheckBtn{
-                    padding: 10px;
-                    height: 100%;
-                    background-color: $mainColor1;
-
-                    @include font(0.875rem, 600, white);
-                    white-space: nowrap;
-                }//button.idDupliCheckBtn
-            }//idInputWrapper
+            }
             >span.idInfo{
 
             }
