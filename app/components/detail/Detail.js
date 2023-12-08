@@ -1,6 +1,6 @@
 "use client";
 import styles from "./detail.module.scss"
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 
@@ -13,14 +13,35 @@ import { useRouter } from "next/navigation";
 function Detail() {
     const [on, setOn] = useState(false);
     const router = useRouter();
+    
+    const [location, setLocation] = useState(null);
 
     const accordionToggle = () => {
         setOn(!on);
     }
 
-    const test = () =>{
-        console.log("아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ");
+    const geolocation = () => {
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    // 위치 정보 가져오기 성공
+                    const { latitude, longitude } = position.coords;
+                    setLocation({ latitude, longitude });
+                    console.log(location);
+                },
+                (error) => {
+                    // 위치 정보 가져오기 실패
+                    console.error('Error getting geolocation:', error);
+                }
+            );
+        }
+
     }
+
+    useEffect(() => {
+        geolocation();
+    }, [])
 
     return (
         <section>
@@ -192,7 +213,7 @@ function Detail() {
                             </div>
                         </div>
                     </li>
-                    
+
                 </ul>
             </div>
 
