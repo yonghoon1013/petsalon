@@ -18,6 +18,10 @@ function Detail() {
         setOn(!on);
     }
 
+    const test = () =>{
+        console.log("아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ");
+    }
+
     return (
         <section>
             <div className={styles.top}>
