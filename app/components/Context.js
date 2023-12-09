@@ -14,19 +14,19 @@ function Context({children}) {
     .then(res=>{
         setProfView(res.data[0].imgUrl);
     });
-  }
+  };
 
-  const memberLd = () => {
-    axios.get(`/api/member`) 
+  const memberLd = async () => {
+    await axios.get(`/api/member`)
     .then(res=>{
       console.log(res);
-    })
-  }
+    });
+  };
 
   useEffect(()=>{
     // memberLd();
     // profLd();
-  }, [])
+  }, []);
 
   return (
     <myContext.Provider value={{profView}}>
