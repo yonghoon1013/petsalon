@@ -9,6 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* 카카오 로그인 */}
+        <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+      </head>
       <Context>
         <body>
           <main>{children}</main>
